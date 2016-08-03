@@ -2,7 +2,7 @@
 
 // dataServce: To store and process filter functions
 // @var dataService.ingredients {array} storing cocktail list
-// @var dataService.selected {object} the selected cocktail object (for single.html page)
+
 
 app.service('dataService', ['$http', function($http){
 	
@@ -54,6 +54,7 @@ app.service('dataService', ['$http', function($http){
 		return out;
 	}
 
+
 	// GET COCKTAIL LIST
 	this.getCocktails = function() {
 
@@ -62,8 +63,10 @@ app.service('dataService', ['$http', function($http){
 				var results = response.data;
 				// return results;
 				if (self.ingredients.length === 0) {
+					// If not filtering anything, return complete list
 					return results;
 				} else {
+					// If filtering rules exist, do ingFilter and returns the filtered list
 					return self.ingFilter(results, self.ingredients);
 				}
 				
