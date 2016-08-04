@@ -1,3 +1,4 @@
+// REGISTER RECOMMENDATION PANEL DIRECTIVE
 app.directive('recommendPanel', function() {
 	return {
 		restrict: 'C',
@@ -7,3 +8,4 @@ app.directive('recommendPanel', function() {
 		controllerAs: 'rec'
 	};
 });
+

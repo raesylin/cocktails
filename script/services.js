@@ -36,7 +36,7 @@ app.service('dataService', ['$http', function($http){
 		// @param criteria {array} the ingredients user have
 		var out = [];
 		angular.forEach(input, function(cocktail) {
-			// For each cocktail in input examine its ingredients with criteria
+			// For each cocktail in input examine its ingredients with criteria`
 			if (self.containsAll(cocktail.ingredients, criteria)) {
 				out.push(cocktail);
 			}

@@ -1,34 +1,52 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="en" ng-app="autocompleteDemo">
 <head>
 	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Cocktail Randomizer!</title>
+	<title>Testing Angular Material</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<link rel="stylesheet" href="stylesheet/style.css" />
+	<!-- <link rel="stylesheet" href="stylesheet/style.css" /> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script src="https://use.fontawesome.com/d84df17e34.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+	<script src="demo.js"></script>
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
-  
-
 </head>
 <body>
-	<div ng-view></div>
-	<script src="script/app.js"></script>
-	<script src="script/routes.js"></script>
-	<script src="script/services.js"></script>
-	<script src="script/controllers/mainCtrl.js"></script>
-	<script src="script/controllers/showCtrl.js"></script>
-	<script src="script/controllers/recCtrl.js"></script>
-	<script src="script/directives.js"></script>
-	<script src="script/filters.js"></script>
+	
+	<div ng-controller="DemoCtrl as ctrl">
+		<md-autocomplete
+          ng-disabled="ctrl.isDisabled"
+          md-no-cache="ctrl.noCache"
+          md-selected-item="ctrl.selectedItem"
+          md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+          md-search-text="ctrl.searchText"
+          md-selected-item-change="ctrl.selectedItemChange(item)"
+          md-items="item in ctrl.querySearch(ctrl.searchText)"
+          md-item-text="item.display"
+          md-min-length="0"
+          placeholder="What ingredient do you have?"
+          md-select-on-match="true"
+          md-select-on-focus="true"
+          md-match-case-insensitive="true">
+        <md-item-template>
+          <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+        </md-item-template>
+        <md-not-found>
+          No ingredients matching "{{ctrl.searchText}}" were found.
+        </md-not-found>
+      </md-autocomplete>
+     <ul>
+     	<li ng-repeat="i in ctrl.output track by $index">{{i}}</li>
+     </ul>
+	</div>
+
+
+
 
 </body>
 </html>

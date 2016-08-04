@@ -4,7 +4,8 @@ app.config(function($routeProvider) {
 		// homepage
 		.when("/", {
 			templateUrl: "pages/home.html",
-			controller: "mainCtrl"
+			controller: "mainCtrl",
+			controllerAs: "ctrl"
 		})
 
 		// displaying all cocktails with filter function
