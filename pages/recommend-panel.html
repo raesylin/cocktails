@@ -9,9 +9,9 @@
 		<div class="col-md-6">
 			<h4>Ingredients</h4>
 			<ul class="list-group">
-				<li class="list-group-item" ng-repeat="i in rec.selected.ingredients"><i class="fa fa-check"></i> {{i}}</li><!-- /.list-group-item -->
+				<li class="list-group-item" ng-repeat="item in rec.selected.ingredients track by $index"><i class="fa fa-check"></i> {{item | capitalize:true}}</li><!-- /.list-group-item -->
 			</ul><!-- /.list-group -->
-			<a href="" ng-click="rec.showMore()">See more drinks...</a>
+			<a href="" ng-click="rec.showMore()">More drinks...</a>
 		</div><!-- /.col-md-6 -->
 	</div><!-- /.row -->
 		

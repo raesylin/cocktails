@@ -44,10 +44,17 @@ app.controller('mainCtrl', ['$scope', '$location', '$compile', 'dataService', fu
 		}
 	}
 
-	// REMOVE SELECTED ITEM FROM SUGGESTED LIST
+	// UPDATE SUGGESTED LIST:
+	// If item already exists, remove this item;
+	// if item not exsit (been removed previously), add it back
 	function updateIngredients(item) {
 		var index = self.ingredients.indexOf(item);
-		self.ingredients.splice(index, 1);
+		if (index === -1) {
+			self.ingredients.push(item);
+		} else {
+			self.ingredients.splice(index, 1);
+		}
+		
 	}
 
 	// Cosmetic function
@@ -76,6 +83,7 @@ app.controller('mainCtrl', ['$scope', '$location', '$compile', 'dataService', fu
 		self.output = [];
 		self.selectedItem = null;
 		self.searchText = '';
+		self.ingredients = loadAll();
 		jQuery('.recommend-panel').empty();
 	}
 

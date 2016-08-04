@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8" />
+	<title>test for capitalize filter</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script>
+		angular.module('app', [])
+		.filter('capitalize', function() {
+	return function(input, all) {
+		var reg = (all) ? /([^\W_]+[^\s-]*) */g : /([^\W_]+[^\s-]*)/;
+		return (!!input) ? input.replace(reg, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : '';
+    };
+}).controller('mainCtrl',['$scope', function($scope) {
+	$scope.text = "this is how it works";
+}]);
+	</script>
+</head>
+<body ng-controller="mainCtrl">
+	<h1>{{text}}</h1>
+	<h2>First: {{text | capitalize }}</h2>
+	<h2>Every word: {{text | capitalize:true }} </h2>
+</body>
+</html>
