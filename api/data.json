@@ -2,7 +2,8 @@
 	{
 		"id": 1,
 		"name": "Screwdriver",
-		"ingredients": ["vodka", "orange juice"]
+		"ingredients": ["vodka", "orange juice"],
+		"img_url": "https://pixabay.com/static/uploads/photo/2015/07/04/21/59/screwdriver-831767_960_720.jpg"
 	},
 	{
 		"id": 2,

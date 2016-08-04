@@ -1,5 +1,5 @@
 // CONTROLLER FOR DROPDOWN MENU & MAIN PAGE
-app.controller('mainCtrl', ['$scope', '$location', '$compile', 'dataService', function($scope, $location, $compile, dataService){
+app.controller('mainCtrl', ['$scope', '$location', '$compile', '$filter', 'dataService', function($scope, $location, $compile, $filter, dataService){
 	
 	var self = this;
 	// md-autocomplete settings:
@@ -14,12 +14,17 @@ app.controller('mainCtrl', ['$scope', '$location', '$compile', 'dataService', fu
 	self.searchTextChange = searchTextChange;
 	self.clearIngredient = clearIngredient;
 	self.submit = submit;
+	self.focus = focus;
+	self.removeIngredient = removeIngredient;
 
 	// all ingredients from database; not formatted yet
 	self.allIngredients = [];
 	// final ingredient list by user:
 	self.output = [];
 
+	// Animation control
+	self.moveUp = false;
+	self.moveUpMain = moveUpMain;
 
 
 	// **********************************************************
@@ -41,6 +46,7 @@ app.controller('mainCtrl', ['$scope', '$location', '$compile', 'dataService', fu
 		if (item !== null && item !== undefined) {
 			self.output.push(item.value);
 			updateIngredients(item);
+			self.searchText = null;
 		}
 	}
 
@@ -50,7 +56,11 @@ app.controller('mainCtrl', ['$scope', '$location', '$compile', 'dataService', fu
 	function updateIngredients(item) {
 		var index = self.ingredients.indexOf(item);
 		if (index === -1) {
-			self.ingredients.push(item);
+			self.ingredients.push({
+				value: item,
+				display: capitalize(item)
+			});
+			self.ingredients = $filter('orderBy')(self.ingredients, 'display');
 		} else {
 			self.ingredients.splice(index, 1);
 		}
@@ -88,6 +98,7 @@ app.controller('mainCtrl', ['$scope', '$location', '$compile', 'dataService', fu
 	}
 
 	function submit() {
+
 		// empty existing (if any) recommendation panel content
 		jQuery('.recommend-panel').empty();
 
@@ -98,6 +109,18 @@ app.controller('mainCtrl', ['$scope', '$location', '$compile', 'dataService', fu
 		var compiledHTML = $compile('<div class="recommend-panel"></div>')($scope);
 		jQuery('#home').append(compiledHTML);
 
+	}
+
+	// Remove one of the ingredients input by user
+	function removeIngredient(ing) {
+		var index = self.output.indexOf(ing);
+		self.output.splice(index, 1);
+		updateIngredients(ing);
+	}
+
+	// Animation Control
+	function moveUpMain() {
+		self.moveUp = true;
 	}
 
 	// RETRIEVE ALL INGREDIENTS FROM DATABASE
