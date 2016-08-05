@@ -8,7 +8,8 @@ body {
 
 body,
 input[type="text"],
-input[type="button"] {
+input[type="button"],
+input[type="submit"] {
   font-family: "Source Sans Pro", sans-serif; }
 
 div.wrapper {
