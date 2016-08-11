@@ -10,7 +10,7 @@
 		    <input type="text" class="form-control" placeholder="Ingredient or cocktail name" aria-describedby="basic-addon1" ng-model="ing">
 		</div><!-- /.input-group -->
 		<br />
-	    <div class="list-group" ng-repeat="c in collection.sortedCocktails | filter: ing">
+	    <div class="list-group" ng-repeat="c in collection.sortedCocktails | filter: ing | limitTo:show.limitVal">
 	        <div class="list-group-item">
 	            <h4 class="list-group-item-heading">{{c.name}} </h4>
 	            <hr>
