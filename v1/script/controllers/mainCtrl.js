@@ -43,11 +43,18 @@ app.controller('mainCtrl', ['$scope', '$location', '$compile', '$filter', 'dataS
 
 	// AFTER SELECTING AN ITEM:
 	function selectedItemChange(item) {
-		if (item !== null && item !== undefined) {
+
+		if (!item) {
+			/**
+			 * Used to examine if item is undefined or null
+			 * Do nothing here if item is undefined or null
+			 */
+		} else {
 			self.output.push(item.value);
 			updateIngredients(item);
 			self.searchText = null;
 		}
+
 	}
 
 	// UPDATE SUGGESTED LIST:

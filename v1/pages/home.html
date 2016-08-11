@@ -4,7 +4,7 @@
 			<h1 class="text-center moving-up" ng-class="{'h1-origin': !ctrl.moveUp, 'h1-movedup': ctrl.moveUp}">
 				Cocktail Randomizer<span>!</span>
 			</h1>
-			<hr /> 
+			<hr />
 		</header><!-- /.main-header -->
 		
 		<div class="col-sm-6 col-sm-offset-3">
@@ -24,7 +24,7 @@
 				md-select-on-focus="true"
 				md-match-case-insensitive="true">
 					<md-item-template>
-						<span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item | capitalize:true}}</span>
+						<span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
 					</md-item-template>
 					<md-not-found>
 						No ingredients matching "{{ctrl.searchText}}" were found.
@@ -34,17 +34,17 @@
 			
 
 			<ul class="list-group user-input">
-				<li class="list-group-item" ng-repeat="i in collection.userIngredients track by $index">
+				<li class="list-group-item" ng-repeat="i in ctrl.output track by $index">
 					{{i | capitalize:true}} 
 					<span class="close" ng-click="ctrl.removeIngredient(i)"><i class="fa fa-times fa-2x"></i></span>
 				</li><!-- /.list-group item -->
 			</ul><!-- /.list-group user-input -->
 
 			<div class="text-center">
-				<input type="button" class="btn btn-danger" value="Clear All" ng-click="ctrl.clearIngredients()" />
+				<input type="button" class="btn btn-danger" value="Clear All" ng-click="ctrl.clearIngredient()" />
 				<input type="submit" class="btn btn-info" value="Get Me A Drink" ng-click="ctrl.submit()" />
 			</div>
 		</div><!-- /.col-md-6 col-md-offset-3 -->
 	</div><!-- /#home-->
-	<div id="panel"></div>
+	
 </div><!-- /.container -->

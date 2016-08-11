@@ -92,49 +92,6 @@ ul.user-input .list-group-item {
   font-weight: bolder;
   color: #b95252; }
 
-.no-matching-drink {
-  margin-top: 50px; }
-
-.no-matching-drink h2 {
-  font-family: "Source Sans Pro", sans-serif;
-  color: lightcyan;
-  font-weight: bolder;
-  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5); }
-
-.no-matching-drink p {
-  font-weight: bolder;
-  color: darkcyan; }
-
-.show-all h2 {
-  color: honeydew;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 200%;
-  font-weight: bolder;
-  margin-bottom: 10px;
-  margin-top: 30px;
-  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5); }
-
-.show-all p {
-  color: lightgrey; }
-
-.show-all .list-group-item {
-  opacity: 0.95;
-  background-color: gainsboro;
-  border-radius: 0; }
-
-.show-all .list-group-item h4 {
-  font-weight: bolder;
-  color: crimson;
-  font-size: 180%; }
-
-.show-all .list-group-item hr {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 3px solid rgba(0, 0, 0, 0.14); }
-
-.show-all .list-group-item p {
-  color: dimgrey; }
-
 img.thumbnail {
   width: 100%;
   height: auto;

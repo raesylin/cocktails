@@ -1,0 +1,108 @@
+[
+	{
+		"id": 1,
+		"name": "Screwdriver",
+		"ingredients": ["vodka", "orange juice"],
+		"img_url": "https://pixabay.com/static/uploads/photo/2015/07/04/21/59/screwdriver-831767_960_720.jpg"
+	},
+	{
+		"id": 2,
+		"name": "Martini",
+		"ingredients": ["dry vermouth", "gin"]
+	},
+	{
+		"id": 3,
+		"name": "Sour",
+		"ingredients": ["gin", "lemon juice", "sugar"]
+	},
+	{
+		"id": 4,
+		"name": "Mojito",
+		"ingredients": ["white rum", "mint", "soda water", "lime juice", "sugar"]
+	},
+	{
+		"id": 5,
+		"name": "Daiquiri",
+		"ingredients": ["white rum", "simple syrup", "lime juice", "citrus juice", "sugar"]
+	},
+	{
+		"id": 6,
+		"name": "Cosmopolitan",
+		"ingredients": ["lime juice", "cranberry juice", "cointreau", "vodka"]
+	},
+	{
+		"id": 7,
+		"name": "Mai Tai",
+		"ingredients": ["white rum", "lime juice", "orange curacao", "syrup", "dark rum"]
+	},
+	{
+		"id": 8,
+		"name": "Tequila Sunrise",
+		"ingredients": ["orange juice", "tequila", "syrup"]
+	},
+	{
+		"id": 9,
+		"name": "Mimosa",
+		"ingredients": ["orange juice", "champagne"]
+	},
+	{
+		"id": 10,
+		"name": "Cuba Libre",
+		"ingredients": ["white rum", "lime juice"]
+	},
+	{
+		"id": 11,
+		"name": "White Russian",
+		"ingredients": ["vodka", "coffee liqueur", "cream"]
+	},
+	{
+		"id": 12,
+		"name": "Sea Breeze",
+		"ingredients": ["vodka", "cranberry juice", "grapefruit juice"]
+	},
+	{
+		"id": 13,
+		"name": "Long Island Iced Tea",
+		"ingredients": ["vodka", "white rum", "lemon juice", "gin", "tequila", "cola", "triple sec", "syrup"]
+	},
+	{
+		"id": 14,
+		"name": "Sex on the Beach",
+		"ingredients": ["vodka", "cranberry juice", "orange juice", "peach schnapps"]
+	},
+	{
+		"id": 15,
+		"name": "Hurricane",
+		"ingredients": ["light rum", "lemon juice", "passion fruit syrup", "dark rum"]
+	},
+	{
+		"id": 16,
+		"name": "Irish Coffee",
+		"ingredients": ["hot coffee", "Irish whiskey", "brown sugar", "cream"]
+	},
+	{
+		"id": 17,
+		"name": "Singapore Sling",
+		"ingredients": ["cointreau", "pineapple juice", "lime juice", "gin", "grenadine", "cheery liqueur", "DOM Benedictine", "Angostura bitters"]
+	},
+	{
+		"id": 18,
+		"name": "Paloma",
+		"ingredients": ["tequila", "grapefruit soda"]
+	},
+	{
+		"id": 19,
+		"name": "Tom Collins",
+		"ingredients": ["lemon juice", "gin", "carbonated water", "syrup"]
+	},
+	{
+		"id": 20,
+		"name": "Old Fashioned",
+		"ingredients": ["Bourbon", "Angostura bitters", "sugar cube"]
+	},
+	{
+		"id": 21,
+		"name": "Margarita",
+		"ingredients": ["tequila", "lime juice", "cointreau"]
+	}
+]
