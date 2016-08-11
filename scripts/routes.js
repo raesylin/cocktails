@@ -10,7 +10,8 @@ app.config(function($routeProvider) {
 
 		.when("/show", {
 			templateUrl: "pages/show.html",
-			controller: "showCtrl"
+			controller: "showCtrl",
+			controllerAs: "show"
 		})
 
 		.otherwise({
