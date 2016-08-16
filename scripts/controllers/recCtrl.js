@@ -27,9 +27,10 @@ app.controller('recCtrl', ['$scope', '$filter', '$location', function($scope, $f
 				var index = ingredients.indexOf(item);
 				if (index >= 0) {
 					score += 1;
-				} else {
-					score -= 1;
-				}
+				} 
+				// else {
+				// 	score -= 1;
+				// }
 			});
 
 			return (score / cocktail.ingredients.length);
